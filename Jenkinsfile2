@@ -1,8 +1,15 @@
+// CODE_CHANGES = getGitChanges() // Just an example
 pipeline {
     agent any
 
     stages {
         stage('Build') {
+//          when {
+//		expression {
+//			BRANCH_NAME == 'dev' && CODE_CHANGES == true // run only if branch is dev or main
+//		}
+//          }
+
             steps {
 		echo "Building Application!!!???"
             }
