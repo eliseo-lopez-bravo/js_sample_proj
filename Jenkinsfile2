@@ -22,6 +22,17 @@ pipeline {
             steps {
 		echo "Deploying Application!!!???"
             }
-        } 
+        }
+    }
+    post {
+	aways{
+		echo "aways!!"
+	}
+	success{
+		echo "success!!"
+	}
+	failure{
+		echo "failure!!"
+	}
     }
 }
