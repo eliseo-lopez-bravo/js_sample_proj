@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="HelloWorld" default="build">
+
+    <!-- Remove previous build artifacts -->
+    <target name="clean">
+        <delete dir="build"/>
+        <echo>Previous build artifacts removed.</echo>
+    </target>
+
+    <!-- Prepare application package -->
+    <target name="compile">
+        <mkdir dir="build"/>
+
+        <copy file="app.js" todir="build"/>
+        <copy file="deploy.sh" todir="build"/>
+
+        <echo>JavaScript application packaged.</echo>
+    </target>
+
+    <!-- Main build target -->
+    <target name="build" depends="clean,compile">
+        <echo>Build completed successfully!</echo>
+    </target>
+
+</project>
+

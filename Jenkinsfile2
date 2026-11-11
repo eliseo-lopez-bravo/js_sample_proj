@@ -6,6 +6,9 @@ pipeline {
 //	SERVER_CREDENTIALS = credentials('server-credentials')
 
     }
+    tools {
+		ant 'Ant'
+    }
     stages {
         stage('Build') {
 //          when {
@@ -17,6 +20,7 @@ pipeline {
             steps {
 		echo "Building Application!!!???"
 		echo "Building version ${NEW_VERSION}"
+		sh "ant clean build"
 
             }
         }        
