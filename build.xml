@@ -23,5 +23,12 @@
         <echo>Build completed successfully!</echo>
     </target>
 
+    <target name="package" depends="build">
+        <tar destfile="build/deployment.tar.gz"
+             basedir="build"
+             compression="gzip"/>
+        <echo>Deployment package created.</echo>
+    </target>
+
 </project>
 
