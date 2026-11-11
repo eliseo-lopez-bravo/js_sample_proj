@@ -29,11 +29,13 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                sh '''
-                    ssh -p ${PHONE_PORT} \
-                    ${PHONE_USER}@${PHONE_IP} \
-                    'curl -s http://127.0.0.1:3000'
-                '''
+                sshagent(credentials: ['android-termux-key']) {
+ 	               sh '''
+ 	                  ssh -p ${PHONE_PORT} \
+  	                  ${PHONE_USER}@${PHONE_IP} \
+             		  'curl -s http://127.0.0.1:3000'
+                	'''
+		}
             }
         }
     }
