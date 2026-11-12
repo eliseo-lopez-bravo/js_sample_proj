@@ -31,8 +31,8 @@ pipeline {
         stage('Test') {
             when {
 		expression {
-			BRANCH_NAME == 'dev' || BRANCH_NAME == 'main'  // run only if branch is dev or main
-//			BRANCH_NAME == 'main' && params.executeTests == true
+//			BRANCH_NAME == 'dev' || BRANCH_NAME == 'main'  // run only if branch is dev or main
+			BRANCH_NAME == 'main' && params.executeTests == true
 		}
             }
             steps {
@@ -42,7 +42,7 @@ pipeline {
         stage('Deploy') {
             steps {
 		echo "Deploying Application!!!???"
-		echo "Deploying version  params.VERSION"
+		echo "Deploying version  ${params.VERSION}"
 
 //		echo "Deploying with ${SERVER_CREDENTIALS}"
 //		withCredentials([
