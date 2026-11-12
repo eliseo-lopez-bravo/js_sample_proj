@@ -23,7 +23,7 @@ pipeline {
 
             steps {
 		echo "Building Application!!!???"
-		echo "Building version params.VERSION"
+		echo "Building version ${params.VERSION}"
 		sh "ant package"
 
             }
