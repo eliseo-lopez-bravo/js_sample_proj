@@ -42,7 +42,7 @@ pipeline {
     }
     post {
         always{
-            echo "always execute this task!!"
+            echo "always execute this task!!!!"
         }
         success{
             echo "only execute this task if successful!!" // this could be an email with build status
